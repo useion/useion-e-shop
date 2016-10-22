@@ -1,0 +1,24 @@
+
+Test case: Place order with bank transfer payment method
+
+Test steps
+
+1. User clicks to checkout
+2. User enters billing and shipping info
+3. User checks the order and confirms the order by clicking pay
+   with the bank transfer
+
+Expected results
+
+1. System shows billing and shipping form
+2. System displays billing, shipping info and total price
+3. System saves the order and provide bank transfer payment instructions
+
+Test execution results
+
+Date: 1.2.2016
+Pass/Fail: Fail
+Note: I could not pay, because bank no. was not in the IBAN format
+
+Date: 8.2.2016
+Pass/Fail: Pass

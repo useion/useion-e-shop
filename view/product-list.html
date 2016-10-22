@@ -1,0 +1,21 @@
+
+<div class="row">
+<!-- **System lists the products as thumbnails** -->
+
+{% for (var i=0; i<o.products.length; i++) { %}
+    <!-- **Show Product Detail** -->
+    <a href="#/public/product/id/{%=o.products[i].id%}" data-id="{%=o.products[i].id%}" class="product-link" target="_self">
+        <div class="col-sm-6 col-md-4">
+               <div class="thumbnail">
+                 <img src="{%=o.products[i].img%}" alt="...">
+                 <div class="caption">
+                   <h3 class="product-name">{%=o.products[i].name%}</h3>
+                   <p class="product-description">{%=o.products[i].description%}</p>
+                   <p>{%=o.products[i].price%} &#8364;</p>
+                 </div>
+               </div>
+         </div>
+     </a>
+{% } %}
+
+</div>

@@ -1,0 +1,66 @@
+
+
+<div class="row back">
+    <div class="col-sm-12 col-md-12">
+        <p>
+            <a href="#" onclick="return back();" target="_self">
+                <button type="button" class="btn btn-default" name="button">
+                    <span class="glyphicon glyphicon-arrow-left"></span> <span>Back</span>
+                </button>
+            </a>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        {% if (o.products.length === 0) { %}
+        <h1>Shopping cart</h1>
+
+        <p>No items :-(</p>
+        {% } else { %}
+
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <td>
+                        #
+                    </td>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        Price
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for (var i in o.products) { %}
+                <tr>
+                    <td>
+                        {%=o.products[i].id%}
+                    </td>
+                    <td>
+                        {%=o.products[i].name%}
+                    </td>
+                    <td>
+                        {%=o.products[i].price%} &#8364;
+                    </td>
+                </tr>
+                {% } %}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <span style="font-weight: bold; line-height: 30px">Total: {%=o.totalPrice%} &#8364;</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <a class="btn btn-success pull-right" id="place-order" role="button">Checkout</a>
+
+        {% } %}
+    </div>
+</div>

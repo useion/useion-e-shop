@@ -1,0 +1,55 @@
+#checkout-wrap {
+    /*max-width: 480px;*/
+}
+#checkout-wrap input, #checkout-wrap textarea {
+}
+.nav-tabs > li {
+    width: 50%;
+    text-align: center;
+}
+.tab-pane {    padding: 15px;
+
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0 0px 4px 4px;
+}
+.nav-tabs > li > a {
+    margin-right: 0;
+}
+html {
+	font-family: Arial;
+	padding:0;
+	margin:0;
+	font-size: 14px;
+}
+#paypal, #bank-transfer {    width: 100%;
+
+    line-height: 40px;
+}
+p {
+    text-align: justify;
+    text-justify: newspaper;
+}
+#wrap-content, .container, .container-fluid {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+
+.product-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.product-description {
+    display: block; /* Fallback for non-webkit */
+      display: -webkit-box;
+      height: 60px; /* Fallback for non-webkit */
+      line-height: 20px;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+}

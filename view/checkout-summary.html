@@ -1,0 +1,105 @@
+
+
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+
+        {% if (o.products.length === 0) { %}
+        <p>No items :-(</p>
+        {% } else { %}
+
+        <div class="row">
+        <div class="col-md-4">
+
+            <p>
+                <strong>Name:</strong> <span>{%=o.name%}</span>
+            </p>
+            <p>
+                <strong>Email:</strong> <span>{%=o.email%}</span>
+            </p>
+            <p style="font-weight:bold">
+                Shipping address
+            </p>
+            <p>
+                {%=o.shippingAddress%}
+            </p>
+        </div>
+
+        <div class="col-md-8">
+        <p style="font-weight:bold">
+            Your order
+        </p>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <td>
+                        #
+                    </td>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        Price
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for (var i in o.products) { %}
+                <tr>
+                    <td>
+                        {%=o.products[i].id%}
+                    </td>
+                    <td>{%=o.products[i].name%}</td>
+                    <td>
+                        {%=o.products[i].price%} &#8364;
+                    </td>
+                </tr>
+                {% } %}
+
+                <tr>
+                    <td colspan="2">
+                        Shipping charges
+                    </td>
+                    <td>
+                        {%=o.shippingPrice%} &#8364;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Taxes (20 %)
+                    </td>
+                    <td>
+                        {%=o.taxes%} &#8364;
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <span style="font-weight: bold; line-height: 30px">Total: {%=o.totalPrice%} &#8364;</span><br>
+                        <span style="line-height: 30px">Estimated delivery date:</span> <span style="font-weight: bold; line-height: 30px">{%=o.estimatedDeliveryDate%}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <a class="btn btn-default" id="bank-transfer" role="button">Pay with Bank transfer</a>
+            </div>
+            <div class="col-md-6">
+                <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="example@example.com">
+                <input type="hidden" name="currency_code" value="EUR">
+                <input type="hidden" name="item_name" value="Your order">
+                <input type="hidden" name="amount" value="{%=o.totalPrice%}">
+                <button class="btn btn-success"  id="paypal" type="submit" border="0" name="submit">Pay with PayPal</button>
+                </form>
+            </div>
+        </div>
+        {% } %}
+    </div>
+</div>
